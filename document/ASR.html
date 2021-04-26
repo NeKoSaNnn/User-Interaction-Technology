@@ -1,0 +1,724 @@
+<!DOCTYPE html><html><head>
+      <title>readme</title>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      
+      <link rel="stylesheet" href="file:///c:\Users\MJX\.vscode\extensions\shd101wyy.markdown-preview-enhanced-0.5.18\node_modules\@shd101wyy\mume\dependencies\katex\katex.min.css">
+      
+      
+      
+      
+      
+      
+      
+      
+      
+      <style>
+      /**
+ * prism.js Github theme based on GitHub's theme.
+ * @author Sam Clarke
+ */
+code[class*="language-"],
+pre[class*="language-"] {
+  color: #333;
+  background: none;
+  font-family: Consolas, "Liberation Mono", Menlo, Courier, monospace;
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.4;
+
+  -moz-tab-size: 8;
+  -o-tab-size: 8;
+  tab-size: 8;
+
+  -webkit-hyphens: none;
+  -moz-hyphens: none;
+  -ms-hyphens: none;
+  hyphens: none;
+}
+
+/* Code blocks */
+pre[class*="language-"] {
+  padding: .8em;
+  overflow: auto;
+  /* border: 1px solid #ddd; */
+  border-radius: 3px;
+  /* background: #fff; */
+  background: #f5f5f5;
+}
+
+/* Inline code */
+:not(pre) > code[class*="language-"] {
+  padding: .1em;
+  border-radius: .3em;
+  white-space: normal;
+  background: #f5f5f5;
+}
+
+.token.comment,
+.token.blockquote {
+  color: #969896;
+}
+
+.token.cdata {
+  color: #183691;
+}
+
+.token.doctype,
+.token.punctuation,
+.token.variable,
+.token.macro.property {
+  color: #333;
+}
+
+.token.operator,
+.token.important,
+.token.keyword,
+.token.rule,
+.token.builtin {
+  color: #a71d5d;
+}
+
+.token.string,
+.token.url,
+.token.regex,
+.token.attr-value {
+  color: #183691;
+}
+
+.token.property,
+.token.number,
+.token.boolean,
+.token.entity,
+.token.atrule,
+.token.constant,
+.token.symbol,
+.token.command,
+.token.code {
+  color: #0086b3;
+}
+
+.token.tag,
+.token.selector,
+.token.prolog {
+  color: #63a35c;
+}
+
+.token.function,
+.token.namespace,
+.token.pseudo-element,
+.token.class,
+.token.class-name,
+.token.pseudo-class,
+.token.id,
+.token.url-reference .token.variable,
+.token.attr-name {
+  color: #795da3;
+}
+
+.token.entity {
+  cursor: help;
+}
+
+.token.title,
+.token.title .token.punctuation {
+  font-weight: bold;
+  color: #1d3e81;
+}
+
+.token.list {
+  color: #ed6a43;
+}
+
+.token.inserted {
+  background-color: #eaffea;
+  color: #55a532;
+}
+
+.token.deleted {
+  background-color: #ffecec;
+  color: #bd2c00;
+}
+
+.token.bold {
+  font-weight: bold;
+}
+
+.token.italic {
+  font-style: italic;
+}
+
+
+/* JSON */
+.language-json .token.property {
+  color: #183691;
+}
+
+.language-markup .token.tag .token.punctuation {
+  color: #333;
+}
+
+/* CSS */
+code.language-css,
+.language-css .token.function {
+  color: #0086b3;
+}
+
+/* YAML */
+.language-yaml .token.atrule {
+  color: #63a35c;
+}
+
+code.language-yaml {
+  color: #183691;
+}
+
+/* Ruby */
+.language-ruby .token.function {
+  color: #333;
+}
+
+/* Markdown */
+.language-markdown .token.url {
+  color: #795da3;
+}
+
+/* Makefile */
+.language-makefile .token.symbol {
+  color: #795da3;
+}
+
+.language-makefile .token.variable {
+  color: #183691;
+}
+
+.language-makefile .token.builtin {
+  color: #0086b3;
+}
+
+/* Bash */
+.language-bash .token.keyword {
+  color: #0086b3;
+}
+
+/* highlight */
+pre[data-line] {
+  position: relative;
+  padding: 1em 0 1em 3em;
+}
+pre[data-line] .line-highlight-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  background-color: transparent;
+  display: block;
+  width: 100%;
+}
+
+pre[data-line] .line-highlight {
+  position: absolute;
+  left: 0;
+  right: 0;
+  padding: inherit 0;
+  margin-top: 1em;
+  background: hsla(24, 20%, 50%,.08);
+  background: linear-gradient(to right, hsla(24, 20%, 50%,.1) 70%, hsla(24, 20%, 50%,0));
+  pointer-events: none;
+  line-height: inherit;
+  white-space: pre;
+}
+
+pre[data-line] .line-highlight:before, 
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-start);
+  position: absolute;
+  top: .4em;
+  left: .6em;
+  min-width: 1em;
+  padding: 0 .5em;
+  background-color: hsla(24, 20%, 50%,.4);
+  color: hsl(24, 20%, 95%);
+  font: bold 65%/1.5 sans-serif;
+  text-align: center;
+  vertical-align: .3em;
+  border-radius: 999px;
+  text-shadow: none;
+  box-shadow: 0 1px white;
+}
+
+pre[data-line] .line-highlight[data-end]:after {
+  content: attr(data-end);
+  top: auto;
+  bottom: .4em;
+}html body{font-family:"Helvetica Neue",Helvetica,"Segoe UI",Arial,freesans,sans-serif;font-size:16px;line-height:1.6;color:#333;background-color:#fff;overflow:initial;box-sizing:border-box;word-wrap:break-word}html body>:first-child{margin-top:0}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{line-height:1.2;margin-top:1em;margin-bottom:16px;color:#000}html body h1{font-size:2.25em;font-weight:300;padding-bottom:.3em}html body h2{font-size:1.75em;font-weight:400;padding-bottom:.3em}html body h3{font-size:1.5em;font-weight:500}html body h4{font-size:1.25em;font-weight:600}html body h5{font-size:1.1em;font-weight:600}html body h6{font-size:1em;font-weight:600}html body h1,html body h2,html body h3,html body h4,html body h5{font-weight:600}html body h5{font-size:1em}html body h6{color:#5c5c5c}html body strong{color:#000}html body del{color:#5c5c5c}html body a:not([href]){color:inherit;text-decoration:none}html body a{color:#08c;text-decoration:none}html body a:hover{color:#00a3f5;text-decoration:none}html body img{max-width:100%}html body>p{margin-top:0;margin-bottom:16px;word-wrap:break-word}html body>ul,html body>ol{margin-bottom:16px}html body ul,html body ol{padding-left:2em}html body ul.no-list,html body ol.no-list{padding:0;list-style-type:none}html body ul ul,html body ul ol,html body ol ol,html body ol ul{margin-top:0;margin-bottom:0}html body li{margin-bottom:0}html body li.task-list-item{list-style:none}html body li>p{margin-top:0;margin-bottom:0}html body .task-list-item-checkbox{margin:0 .2em .25em -1.8em;vertical-align:middle}html body .task-list-item-checkbox:hover{cursor:pointer}html body blockquote{margin:16px 0;font-size:inherit;padding:0 15px;color:#5c5c5c;background-color:#f0f0f0;border-left:4px solid #d6d6d6}html body blockquote>:first-child{margin-top:0}html body blockquote>:last-child{margin-bottom:0}html body hr{height:4px;margin:32px 0;background-color:#d6d6d6;border:0 none}html body table{margin:10px 0 15px 0;border-collapse:collapse;border-spacing:0;display:block;width:100%;overflow:auto;word-break:normal;word-break:keep-all}html body table th{font-weight:bold;color:#000}html body table td,html body table th{border:1px solid #d6d6d6;padding:6px 13px}html body dl{padding:0}html body dl dt{padding:0;margin-top:16px;font-size:1em;font-style:italic;font-weight:bold}html body dl dd{padding:0 16px;margin-bottom:16px}html body code{font-family:Menlo,Monaco,Consolas,'Courier New',monospace;font-size:.85em !important;color:#000;background-color:#f0f0f0;border-radius:3px;padding:.2em 0}html body code::before,html body code::after{letter-spacing:-0.2em;content:"\00a0"}html body pre>code{padding:0;margin:0;font-size:.85em !important;word-break:normal;white-space:pre;background:transparent;border:0}html body .highlight{margin-bottom:16px}html body .highlight pre,html body pre{padding:1em;overflow:auto;font-size:.85em !important;line-height:1.45;border:#d6d6d6;border-radius:3px}html body .highlight pre{margin-bottom:0;word-break:normal}html body pre code,html body pre tt{display:inline;max-width:initial;padding:0;margin:0;overflow:initial;line-height:inherit;word-wrap:normal;background-color:transparent;border:0}html body pre code:before,html body pre tt:before,html body pre code:after,html body pre tt:after{content:normal}html body p,html body blockquote,html body ul,html body ol,html body dl,html body pre{margin-top:0;margin-bottom:16px}html body kbd{color:#000;border:1px solid #d6d6d6;border-bottom:2px solid #c7c7c7;padding:2px 4px;background-color:#f0f0f0;border-radius:3px}@media print{html body{background-color:#fff}html body h1,html body h2,html body h3,html body h4,html body h5,html body h6{color:#000;page-break-after:avoid}html body blockquote{color:#5c5c5c}html body pre{page-break-inside:avoid}html body table{display:table}html body img{display:block;max-width:100%;max-height:100%}html body pre,html body code{word-wrap:break-word;white-space:pre}}.markdown-preview{width:100%;height:100%;box-sizing:border-box}.markdown-preview .pagebreak,.markdown-preview .newpage{page-break-before:always}.markdown-preview pre.line-numbers{position:relative;padding-left:3.8em;counter-reset:linenumber}.markdown-preview pre.line-numbers>code{position:relative}.markdown-preview pre.line-numbers .line-numbers-rows{position:absolute;pointer-events:none;top:1em;font-size:100%;left:0;width:3em;letter-spacing:-1px;border-right:1px solid #999;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}.markdown-preview pre.line-numbers .line-numbers-rows>span{pointer-events:none;display:block;counter-increment:linenumber}.markdown-preview pre.line-numbers .line-numbers-rows>span:before{content:counter(linenumber);color:#999;display:block;padding-right:.8em;text-align:right}.markdown-preview .mathjax-exps .MathJax_Display{text-align:center !important}.markdown-preview:not([for="preview"]) .code-chunk .btn-group{display:none}.markdown-preview:not([for="preview"]) .code-chunk .status{display:none}.markdown-preview:not([for="preview"]) .code-chunk .output-div{margin-bottom:16px}.scrollbar-style::-webkit-scrollbar{width:8px}.scrollbar-style::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}.scrollbar-style::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode]){position:relative;width:100%;height:100%;top:0;left:0;margin:0;padding:0;overflow:auto}html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{position:relative;top:0}@media screen and (min-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em calc(50% - 457px + 2em)}}@media screen and (max-width:914px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode]) .markdown-preview{font-size:14px !important;padding:1em}}@media print{html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{display:none}}html body[for="html-export"]:not([data-presentation-mode]) #sidebar-toc-btn{position:fixed;bottom:8px;left:8px;font-size:28px;cursor:pointer;color:inherit;z-index:99;width:32px;text-align:center;opacity:.4}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] #sidebar-toc-btn{opacity:1}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc{position:fixed;top:0;left:0;width:300px;height:100%;padding:32px 0 48px 0;font-size:14px;box-shadow:0 0 4px rgba(150,150,150,0.33);box-sizing:border-box;overflow:auto;background-color:inherit}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar{width:8px}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-track{border-radius:10px;background-color:transparent}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc::-webkit-scrollbar-thumb{border-radius:5px;background-color:rgba(150,150,150,0.66);border:4px solid rgba(150,150,150,0.66);background-clip:content-box}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc a{text-decoration:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{padding:0 1.6em;margin-top:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc li{margin-bottom:.8em}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .md-sidebar-toc ul{list-style-type:none}html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{left:300px;width:calc(100% -  300px);padding:2em calc(50% - 457px -  150px);margin:0;box-sizing:border-box}@media screen and (max-width:1274px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{padding:2em}}@media screen and (max-width:450px){html body[for="html-export"]:not([data-presentation-mode])[html-show-sidebar-toc] .markdown-preview{width:100%}}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .markdown-preview{left:50%;transform:translateX(-50%)}html body[for="html-export"]:not([data-presentation-mode]):not([html-show-sidebar-toc]) .md-sidebar-toc{display:none}
+/* Please visit the URL below for more information: */
+/*   https://shd101wyy.github.io/markdown-preview-enhanced/#/customize-css */
+
+      </style>
+    </head>
+    <body for="html-export">
+      <div class="mume markdown-preview  ">
+      <style>
+.myImage{
+  height:360px;
+  width:200px;
+}
+</style>
+<h1 class="mume-header" id="automatic-speech-recognitionasr">Automatic Speech Recognition(ASR)</h1>
+
+<hr>
+<h2 class="mume-header" id="1-%E7%AE%80%E4%BB%8B">1 &#x7B80;&#x4ECB;</h2>
+
+<p>&#x53C2;&#x7167;&#x539F;&#x6709;&#x63D0;&#x4F9B;&#x7684;&#x4EE3;&#x7801;&#x4EE5;&#x53CA;&#x5FAE;&#x8F6F; cotana &#x7684;&#x5DE5;&#x4F5C;&#x65B9;&#x5F0F;&#xFF0C;&#x91CD;&#x65B0;&#x7F16;&#x5199;&#x4E00;&#x4E2A; python &#x8BED;&#x97F3;&#x52A9;&#x624B;&#x7A0B;&#x5E8F;&#xFF0C;&#x501F;&#x52A9; PyQt5 &#x548C; Pipy&#xFF0C;&#x521B;&#x5EFA;&#x53EF;&#x89C6;&#x5316;&#x7A97;&#x53E3;&#xFF0C;&#x4F7F;&#x7528; SpeechRecognition &#x5E93;&#x4E0E; PyAudio &#x5E93;&#x5B9E;&#x73B0;&#x57FA;&#x672C;&#x7684;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x529F;&#x80FD;&#xFF0C;&#x540C;&#x65F6;&#x6839;&#x636E;&#x51E0;&#x4E2A;&#x7279;&#x5B9A;&#x7684;<strong>&#x5173;&#x952E;&#x8BCD;</strong>&#x6267;&#x884C;&#x7B80;&#x5355;&#x7684;&#x884C;&#x52A8;&#x3002;</p>
+<h4 class="mume-header" id="%E5%85%B3%E9%94%AE%E8%AF%8D">&#x5173;&#x952E;&#x8BCD;</h4>
+
+<ul>
+<li>
+<h5>&#x64AD;&#x653E;&#x97F3;&#x4E50; : play \ music \ listen \ &#x97F3;&#x4E50; \ &#x542C; \ &#x64AD;&#x653E;</h5>
+</li>
+<li>
+<h5>&#x6253;&#x5F00;&#x8BB0;&#x4E8B;&#x672C; : text \ edit \ notepad \ note \ &#x7F16;&#x8F91; \ &#x8BB0;&#x4E8B;&#x672C;</h5>
+</li>
+</ul>
+<h4 class="mume-header" id="%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8">&#x5982;&#x4F55;&#x4F7F;&#x7528;</h4>
+
+<ul>
+<li>
+<ol>
+<li>&#x6253;&#x5F00; <code>asr.py</code></li>
+</ol>
+</li>
+<li>
+<ol start="2">
+<li>&#x6839;&#x636E;&#x63D0;&#x793A;&#x5B89;&#x88C5;&#x6240;&#x9700;&#x7684;&#x4F9D;&#x8D56;&#x6587;&#x4EF6;&#x4E0E;&#x5305;</li>
+</ol>
+</li>
+<li>
+<ol start="3">
+<li>&#x8FD0;&#x884C;&#xFF0C;&#x5C06;&#x663E;&#x793A;&#x521D;&#x59CB;&#x754C;&#x9762;</li>
+</ol>
+</li>
+<li>
+<ol start="4">
+<li>&#x5728;&#x83DC;&#x5355;&#x680F;&#x6839;&#x636E;&#x9700;&#x6C42;&#x8FDB;&#x884C;&#x9009;&#x62E9;&#xFF08;&#x53EF;&#x8DF3;&#x8FC7;&#xFF0C;&#x5219;&#x4F7F;&#x7528;<strong>&#x9ED8;&#x8BA4;&#x9009;&#x62E9;:&#x82F1;&#x6587;&#x6A21;&#x5F0F;+Sphinx &#x8BC6;&#x522B;</strong>&#xFF09;</li>
+</ol>
+</li>
+<li>
+<ol start="5">
+<li>&#x70B9;&#x51FB;&#x9EA6;&#x514B;&#x98CE;&#x6309;&#x94AE;&#xFF0C;&#x5F00;&#x59CB;&#x8BB2;&#x8BDD;</li>
+</ol>
+</li>
+</ul>
+<hr>
+<h2 class="mume-header" id="2-%E5%AE%9E%E7%8E%B0%E7%9A%84%E5%8A%9F%E8%83%BD%E7%82%B9">2 &#x5B9E;&#x73B0;&#x7684;&#x529F;&#x80FD;&#x70B9;</h2>
+
+<h3 class="mume-header" id="21-%E5%AE%9E%E7%8E%B0%E7%AE%80%E5%8D%95%E8%AF%AD%E9%9F%B3%E8%AF%86%E5%88%AB%E6%A0%B9%E6%8D%AE%E8%AF%86%E5%88%AB%E7%BB%93%E6%9E%9C%E4%BC%9A%E8%BF%9B%E8%A1%8C">2.1 &#x5B9E;&#x73B0;&#x7B80;&#x5355;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#xFF0C;&#x6839;&#x636E;&#x8BC6;&#x522B;&#x7ED3;&#x679C;&#x4F1A;&#x8FDB;&#x884C;</h3>
+
+<blockquote>
+<ol>
+<li><strong>&quot;&#x8BF7;&#x6C42;&#x91CD;&#x65B0;&#x5F55;&#x5165;&#xFF08;Please speak again~&#xFF09;&quot;</strong></li>
+<li><strong>&quot;&#x65E0;&#x6548;&#x7684;&#x6307;&#x4EE4;&#xFF08;You said xxx , but I can&apos;t understand&#xFF09;&quot;</strong></li>
+<li><strong>&quot;&#x6839;&#x636E;&#x5173;&#x952E;&#x8BCD;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x529F;&#x80FD;(I&apos;ll play music for you \ I&apos;ll open notepad for you)&quot;</strong></li>
+</ol>
+</blockquote>
+<h3 class="mume-header" id="22-%E9%A2%9D%E5%A4%96%E7%9A%84%E5%8A%9F%E8%83%BD%E7%82%B9%E8%AF%86%E5%88%AB%E6%A8%A1%E5%BC%8F%E5%8F%AF%E9%80%89%E6%8B%A9%E4%BB%A5%E5%8F%8A%E5%AF%B9%E4%B8%AD%E6%96%87%E8%AF%AD%E9%9F%B3%E7%9A%84%E5%85%BC%E5%AE%B9">2.2 &#x989D;&#x5916;&#x7684;&#x529F;&#x80FD;&#x70B9;&#x2014;&#x2014;&#x8BC6;&#x522B;&#x6A21;&#x5F0F;&#x53EF;&#x9009;&#x62E9;&#x4EE5;&#x53CA;&#x5BF9;&#x4E2D;&#x6587;&#x8BED;&#x97F3;&#x7684;&#x517C;&#x5BB9;</h3>
+
+<p>&#x7531;&#x4E8E; SpeechRecognition &#x4E00;&#x5171;&#x6709;&#x4E03;&#x4E2A; Recognizer API&#xFF0C;&#x800C;&#x5176;&#x4E2D;&#x53EA;&#x6709;&#x4EE5;&#x4E0B;&#x4E24;&#x4E2A; API &#x53EF;&#x7528;&#xFF08;&#x53E6;&#x5916; 5 &#x4E2A;&#x5747;&#x9700;&#x8981; API &#x5BC6;&#x94A5;&#x8FDB;&#x884C;&#x8EAB;&#x4EFD;&#x9A8C;&#x8BC1;&#xFF09;:</p>
+<blockquote>
+<ol>
+<li>Google Web Speech API &#x2014;&#x2014; recognize_google()</li>
+<li>CMU Sphinx &#x2014;&#x2014; recognize_sphinx()</li>
+</ol>
+</blockquote>
+<ul>
+<li>
+<p>&#x800C;&#x4E14;&#x5B9E;&#x9645;&#x6D4B;&#x8BD5;&#x4E0B;&#x6765; <code>recognize_sphinx()</code>&#x6548;&#x679C;&#x592A;&#x5DEE;&#xFF0C;&#x8BC6;&#x522B;&#x51C6;&#x786E;&#x7387;&#x8FDC;&#x4F4E;&#x4E8E; <code>recognize_google()</code> &#xFF0C;&#x4E8E;&#x662F;&#x4E3A;&#x4E86;&#x66F4;&#x597D;&#x7684;&#x4F7F;&#x7528;&#x4F53;&#x9A8C;&#x52A0;&#x5165;&#x4E86;&#x53EF;&#x9009;&#x62E9; Google &#x4E0E; Sphinx &#x7684;&#x8BC6;&#x522B;&#x6A21;&#x5F0F;&#x5207;&#x6362;&#x3002;</p>
+</li>
+<li>
+<p>&#x540C;&#x65F6;&#x4E3A;&#x4E86;&#x6D4B;&#x8BD5;&#x4E2D;&#x6587;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x51C6;&#x786E;&#x6027;&#xFF0C;&#x4E5F;&#x52A0;&#x5165;&#x4E86;&#x4E2D;&#x82F1;&#x6587;&#x9009;&#x62E9;&#x7684;&#x5207;&#x6362;&#x3002;</p>
+</li>
+</ul>
+<h6 class="mume-header" id="ps%E5%AF%B9%E4%BA%8E%E9%80%89%E6%8B%A9-google-%E8%AF%86%E5%88%AB%E6%A8%A1%E5%BC%8F%E9%9C%80%E8%A6%81%E7%BD%91%E7%BB%9C%E6%94%AF%E6%8C%81%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91%E5%AF%B9%E4%BA%8E-sphinx-%E7%9A%84%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81%E8%AF%A6%E8%A7%81-64-sphinx-%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81jump">PS:&#x5BF9;&#x4E8E;&#x9009;&#x62E9; Google &#x8BC6;&#x522B;&#x6A21;&#x5F0F;&#xFF0C;&#x9700;&#x8981;&#x7F51;&#x7EDC;&#x652F;&#x6301;&#xFF08;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;&#xFF09;&#x5BF9;&#x4E8E; Sphinx &#x7684;&#x4E2D;&#x6587;&#x652F;&#x6301;&#xFF0C;&#x8BE6;&#x89C1; <a href="#jump">6.4 Sphinx &#x4E2D;&#x6587;&#x652F;&#x6301;</a></h6>
+
+<hr>
+<h2 class="mume-header" id="3-%E4%BB%A3%E7%A0%81%E9%83%A8%E5%88%86">3 &#x4EE3;&#x7801;&#x90E8;&#x5206;</h2>
+
+<h3 class="mume-header" id="31-ui-%E9%83%A8%E5%88%86-asrinterfacepy">3.1 UI &#x90E8;&#x5206; <code>asrInterface.py</code></h3>
+
+<blockquote>
+<p>&#x8BBE;&#x7F6E;&#x603B;&#x7A97;&#x53E3;&#x5927;&#x5C0F;&#x4E3A; 500*900</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">MainWindow<span class="token punctuation">.</span>setObjectName<span class="token punctuation">(</span><span class="token string">&quot;MainWindow&quot;</span><span class="token punctuation">)</span>
+MainWindow<span class="token punctuation">.</span>resize<span class="token punctuation">(</span><span class="token number">500</span><span class="token punctuation">,</span> <span class="token number">900</span><span class="token punctuation">)</span>
+MainWindow<span class="token punctuation">.</span>setStyleSheet<span class="token punctuation">(</span><span class="token string">&quot;background-color: rgb(0, 0, 0);&quot;</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>centralwidget <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QWidget<span class="token punctuation">(</span>MainWindow<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>centralwidget<span class="token punctuation">.</span>setObjectName<span class="token punctuation">(</span><span class="token string">&quot;centralwidget&quot;</span><span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x8BBE;&#x7F6E;&#x83DC;&#x5355;&#x680F;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">self<span class="token punctuation">.</span>menu_bar <span class="token operator">=</span> QMainWindow<span class="token punctuation">.</span>menuBar<span class="token punctuation">(</span>MainWindow<span class="token punctuation">)</span>
+<span class="token comment"># &#x6DFB;&#x52A0;&#x83DC;&#x5355;&#x2014;&#x2014;&#x6A21;&#x5F0F;&#x6309;&#x94AE;&#xFF1A;&#x53EF;&#x9009;sphinx\google&#x6A21;&#x5F0F;</span>
+<span class="token comment"># &#x5176;&#x4E2D;google&#x9700;&#x8981;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;</span>
+self<span class="token punctuation">.</span>model_bar <span class="token operator">=</span> self<span class="token punctuation">.</span>menu_bar<span class="token punctuation">.</span>addMenu<span class="token punctuation">(</span><span class="token string">&quot;Model&quot;</span><span class="token punctuation">)</span>
+<span class="token comment"># &#x6DFB;&#x52A0;&#x83DC;&#x5355;&#x2014;&#x2014;&#x8BED;&#x8A00;&#x6309;&#x94AE;&#xFF1A;&#x53EF;&#x9009;&#x4E2D;&#x6587;\English&#x6A21;&#x5F0F;</span>
+self<span class="token punctuation">.</span>language_bar <span class="token operator">=</span> self<span class="token punctuation">.</span>menu_bar<span class="token punctuation">.</span>addMenu<span class="token punctuation">(</span><span class="token string">&quot;Language&quot;</span><span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x8BBE;&#x7F6E; Model &#x7684;&#x4E24;&#x4E2A;&#x5B50;&#x83DC;&#x5355;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># sphinx Trans-API</span>
+self<span class="token punctuation">.</span>sphinx_bar <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QWidgetAction<span class="token punctuation">(</span>MainWindow<span class="token punctuation">,</span> checkable<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>sphinx_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>sphinx_action <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span><span class="token string">&quot; &#x221A;  Sphinx  &quot;</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>sphinx_action<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>sphinx_bar<span class="token punctuation">.</span>setDefaultWidget<span class="token punctuation">(</span>self<span class="token punctuation">.</span>sphinx_action<span class="token punctuation">)</span>
+<span class="token comment">#google Trans-API</span>
+self<span class="token punctuation">.</span>google_bar <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QWidgetAction<span class="token punctuation">(</span>MainWindow<span class="token punctuation">,</span> checkable<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>google_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>google_action <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span><span class="token string">&quot; Google &quot;</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>google_action<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>google_bar<span class="token punctuation">.</span>setDefaultWidget<span class="token punctuation">(</span>self<span class="token punctuation">.</span>google_action<span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x8BBE;&#x7F6E; Language &#x7684;&#x4E24;&#x4E2A;&#x5B50;&#x83DC;&#x5355;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># EN -API</span>
+self<span class="token punctuation">.</span>en_bar <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QWidgetAction<span class="token punctuation">(</span>MainWindow<span class="token punctuation">,</span> checkable<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>en_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>en_action <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span><span class="token string">&quot;  &#x221A;   English  &quot;</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>en_action<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>en_bar<span class="token punctuation">.</span>setDefaultWidget<span class="token punctuation">(</span>self<span class="token punctuation">.</span>en_action<span class="token punctuation">)</span>
+<span class="token comment"># CN -API</span>
+self<span class="token punctuation">.</span>cn_bar <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QWidgetAction<span class="token punctuation">(</span>MainWindow<span class="token punctuation">,</span> checkable<span class="token operator">=</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>cn_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>cn_action <span class="token operator">=</span> QtWidgets<span class="token punctuation">.</span>QLabel<span class="token punctuation">(</span><span class="token string">&quot; &#x4E2D;&#x6587; &quot;</span><span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>cn_action<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>cn_bar<span class="token punctuation">.</span>setDefaultWidget<span class="token punctuation">(</span>self<span class="token punctuation">.</span>cn_action<span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<pre data-role="codeBlock" data-info="python" class="language-python"><span class="token comment"># &#x5C06;&#x6309;&#x94AE;&#x6DFB;&#x52A0;&#x5230;model_bar&#x4E2D;&#x53BB;</span>
+self<span class="token punctuation">.</span>model_bar<span class="token punctuation">.</span>addAction<span class="token punctuation">(</span>self<span class="token punctuation">.</span>sphinx_bar<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>model_bar<span class="token punctuation">.</span>addAction<span class="token punctuation">(</span>self<span class="token punctuation">.</span>google_bar<span class="token punctuation">)</span>
+<span class="token comment"># self.model_bar.addAction(self.bing_bar)</span>
+<span class="token comment"># &#x5C06;&#x6309;&#x94AE;&#x52A0;&#x5230;language_bar&#x4E2D;&#x53BB;</span>
+self<span class="token punctuation">.</span>language_bar<span class="token punctuation">.</span>addAction<span class="token punctuation">(</span>self<span class="token punctuation">.</span>en_bar<span class="token punctuation">)</span>
+self<span class="token punctuation">.</span>language_bar<span class="token punctuation">.</span>addAction<span class="token punctuation">(</span>self<span class="token punctuation">.</span>cn_bar<span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x6062;&#x590D;&#x9EA6;&#x514B;&#x98CE;&#x6309;&#x94AE;&#x7684;&#x6837;&#x5F0F;&#xFF0C;&#x9632;&#x6B62;&#x4E0D;&#x6B63;&#x5E38;&#x663E;&#x793A;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">set_recognize_btn_style</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       self<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setStyleSheet<span class="token punctuation">(</span><span class="token string">&quot;QPushButton{border-image: url(icon/phone.png);}&quot;</span>
+                                        <span class="token string">&quot;QPushButton:hover{border-image: url(icon/phone-hover.png);}&quot;</span>
+                                        <span class="token string">&quot;QPushButton:pressed{border-image: url(icon/play.gif)}&quot;</span><span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x7EDF;&#x4E00;&#x8BBE;&#x7F6E;&#x5B50;&#x83DC;&#x5355;&#x5B57;&#x4F53;&#x6837;&#x5F0F;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">set_style</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> ui<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       font <span class="token operator">=</span> QtGui<span class="token punctuation">.</span>QFont<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       font<span class="token punctuation">.</span>setFamily<span class="token punctuation">(</span><span class="token string">&quot;Calibri&quot;</span><span class="token punctuation">)</span>
+       font<span class="token punctuation">.</span>setPointSize<span class="token punctuation">(</span><span class="token number">13</span><span class="token punctuation">)</span>
+       ui<span class="token punctuation">.</span>setFont<span class="token punctuation">(</span>font<span class="token punctuation">)</span>
+       ui<span class="token punctuation">.</span>setStyleSheet<span class="token punctuation">(</span>
+           <span class="token string">&quot;QLabel { color: rgb(225,225,225);background-color:rgb(50,50,50);}&quot;</span>
+           <span class="token string">&quot;QLabel:hover{ color: rgb(225,225,225);background-color:rgb(0,117,210);}&quot;</span>
+      <span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x4E2D;&#x6587;&#x6837;&#x5F0F;&#x5207;&#x6362;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">cn_ui_text</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       self<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x55E8;! &#x6211;&#x80FD;&#x5E2E;&#x60A8;&#x4EC0;&#x4E48;?&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>label_2<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x60A8;&#x53EF;&#x4EE5;&#x8BF4;:&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>label_3<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;1. \&quot;&#x6211;&#x8981;&#x542C;&#x97F3;&#x4E50;\&quot;&#x6216;\&quot;&#x64AD;&#x653E;&#x97F3;&#x4E50;\&quot; &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>label_4<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;2. \&quot;&#x6253;&#x5F00;&#x8BB0;&#x4E8B;&#x672C;\&quot;&#x6216;\&quot;&#x6211;&#x8981;&#x7F16;&#x8F91;\&quot; &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>model_bar<span class="token punctuation">.</span>setTitle<span class="token punctuation">(</span><span class="token string">&quot;&#x6A21;&#x5F0F;&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>language_bar<span class="token punctuation">.</span>setTitle<span class="token punctuation">(</span><span class="token string">&quot;&#x8BED;&#x8A00;&quot;</span><span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x82F1;&#x6587;&#x6837;&#x5F0F;&#x5207;&#x6362;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">en_ui_text</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       self<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;Hi! How can I help?&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>label_2<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;You can say:&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>label_3<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;1. \&quot;Play music\&quot; or \&quot;Listen Music\&quot;&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>label_4<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;2. \&quot;Open Notepad\&quot; or \&quot;Edit Text\&quot;&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>model_bar<span class="token punctuation">.</span>setTitle<span class="token punctuation">(</span><span class="token string">&quot;Model&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>language_bar<span class="token punctuation">.</span>setTitle<span class="token punctuation">(</span><span class="token string">&quot;Language&quot;</span><span class="token punctuation">)</span>
+</pre></blockquote>
+<h3 class="mume-header" id="32-%E6%A0%B8%E5%BF%83%E9%83%A8%E5%88%86-asrpy">3.2 &#x6838;&#x5FC3;&#x90E8;&#x5206; <code>asr.py</code></h3>
+
+<blockquote>
+<p>&#x521D;&#x59CB;&#x5316;&#x5E76;&#x8FDB;&#x884C;&#x7ED1;&#x5B9A;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">       self<span class="token punctuation">.</span>now_choose <span class="token operator">=</span> <span class="token string">&quot;sphinx&quot;</span>
+       self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">=</span> <span class="token string">&quot;en&quot;</span>
+       self<span class="token punctuation">.</span>ui <span class="token operator">=</span> Ui_MainWindow<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>setupUi<span class="token punctuation">(</span>self<span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>clicked<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>listen_thread<span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>sphinx_bar<span class="token punctuation">.</span>triggered<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>choose_sphinx<span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>google_bar<span class="token punctuation">.</span>triggered<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>choose_google<span class="token punctuation">)</span>
+       <span class="token comment"># self.ui.bing_bar.triggered.connect(self.choose_bing)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cn_bar<span class="token punctuation">.</span>triggered<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>choose_cn<span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>en_bar<span class="token punctuation">.</span>triggered<span class="token punctuation">.</span>connect<span class="token punctuation">(</span>self<span class="token punctuation">.</span>choose_en<span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x76D1;&#x542C;&#x7EBF;&#x7A0B;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">listen_thread</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;I&apos;m listening...&quot;</span><span class="token punctuation">)</span>
+       <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x8BF7;&#x8BF4;&#xFF0C;&#x6211;&#x5728;&#x542C;...&quot;</span><span class="token punctuation">)</span>
+       t <span class="token operator">=</span> threading<span class="token punctuation">.</span>Thread<span class="token punctuation">(</span>target<span class="token operator">=</span>self<span class="token punctuation">.</span>listen<span class="token punctuation">)</span>
+       t<span class="token punctuation">.</span>setDaemon<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+       t<span class="token punctuation">.</span>start<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setStyleSheet<span class="token punctuation">(</span>
+           <span class="token string">&quot;QPushButton{border-image: url(icon/play.gif);}&quot;</span>
+       <span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setEnabled<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x8BED;&#x97F3;&#x8BC6;&#x522B;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">listen</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       r <span class="token operator">=</span> sr<span class="token punctuation">.</span>Recognizer<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       text <span class="token operator">=</span> <span class="token string">&quot;&quot;</span>
+       mic <span class="token operator">=</span> sr<span class="token punctuation">.</span>Microphone<span class="token punctuation">(</span>device_index<span class="token operator">=</span><span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token keyword">with</span> mic <span class="token keyword">as</span> source<span class="token punctuation">:</span>
+           <span class="token comment"># &#x964D;&#x566A;</span>
+           r<span class="token punctuation">.</span>adjust_for_ambient_noise<span class="token punctuation">(</span>source<span class="token punctuation">)</span>
+           audio <span class="token operator">=</span> r<span class="token punctuation">.</span>record<span class="token punctuation">(</span>mic<span class="token punctuation">,</span> duration<span class="token operator">=</span><span class="token number">5</span><span class="token punctuation">)</span>
+       <span class="token keyword">try</span><span class="token punctuation">:</span>
+           <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;Identifying...&quot;</span><span class="token punctuation">)</span>
+           <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x8BC6;&#x522B;&#x4E2D;...&quot;</span><span class="token punctuation">)</span>
+           <span class="token comment"># &#x53EF;&#x9009;sphinx\google\&#x6A21;&#x5F0F;</span>
+           <span class="token comment"># &#x5176;&#x4E2D;google&#x9700;&#x8981;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;</span>
+           <span class="token comment"># &#x5E9F;&#x5F03;bing&#xFF0C;&#x56E0;&#x4E3A;&#x9700;&#x8981;api&#x5BC6;&#x94A5;</span>
+           <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+               <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose <span class="token operator">==</span> <span class="token string">&quot;google&quot;</span><span class="token punctuation">:</span>
+                   text <span class="token operator">=</span> r<span class="token punctuation">.</span>recognize_google<span class="token punctuation">(</span>audio<span class="token punctuation">)</span>
+               <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose <span class="token operator">==</span> <span class="token string">&quot;sphinx&quot;</span><span class="token punctuation">:</span>
+                   text <span class="token operator">=</span> r<span class="token punctuation">.</span>recognize_sphinx<span class="token punctuation">(</span>audio<span class="token punctuation">)</span>
+           <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+               <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose <span class="token operator">==</span> <span class="token string">&quot;google&quot;</span><span class="token punctuation">:</span>
+                   text <span class="token operator">=</span> r<span class="token punctuation">.</span>recognize_google<span class="token punctuation">(</span>audio<span class="token punctuation">,</span> language<span class="token operator">=</span><span class="token string">&quot;zh-cn&quot;</span><span class="token punctuation">)</span>
+               <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose <span class="token operator">==</span> <span class="token string">&quot;sphinx&quot;</span><span class="token punctuation">:</span>
+                  text <span class="token operator">=</span> r<span class="token punctuation">.</span>recognize_sphinx<span class="token punctuation">(</span>audio<span class="token punctuation">,</span> language<span class="token operator">=</span><span class="token string">&quot;zh-cn&quot;</span><span class="token punctuation">)</span>
+           self<span class="token punctuation">.</span>cmd<span class="token punctuation">(</span>text<span class="token punctuation">)</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_recognize_btn_style<span class="token punctuation">(</span><span class="token punctuation">)</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setEnabled<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+       <span class="token keyword">except</span> BaseException <span class="token keyword">as</span> e<span class="token punctuation">:</span>
+           <span class="token keyword">print</span><span class="token punctuation">(</span>e<span class="token punctuation">)</span>
+           <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;Please speak again~&quot;</span><span class="token punctuation">)</span>
+           <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x6211;&#x6CA1;&#x6709;&#x542C;&#x6E05;&#x695A;&#xFF0C;&#x8BF7;&#x518D;&#x8BF4;&#x4E00;&#x904D;&#x5462;~&quot;</span><span class="token punctuation">)</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_recognize_btn_style<span class="token punctuation">(</span><span class="token punctuation">)</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setEnabled<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x8BED;&#x97F3;&#x8F93;&#x5165;&#x8F6C;&#x6362;&#x4E3A;&#x6587;&#x672C;&#xFF0C;&#x5224;&#x65AD;&#x6267;&#x884C;&#x76F8;&#x5E94;&#x547D;&#x4EE4;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">cmd</span><span class="token punctuation">(</span>self<span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       CMD1 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;music&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;listen&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;play&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x64AD;&#x653E;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x542C;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x97F3;&#x4E50;&quot;</span><span class="token punctuation">]</span>
+       CMD2 <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token string">&quot;open&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;text&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;edit&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;notepad&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;note&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;pad&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x6253;&#x5F00;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x7F16;&#x8F91;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&#x8BB0;&#x4E8B;&#x672C;&quot;</span><span class="token punctuation">]</span>
+       is_cmd_music <span class="token operator">=</span> <span class="token boolean">False</span>
+       is_cmd_text <span class="token operator">=</span> <span class="token boolean">False</span>
+       <span class="token keyword">for</span> cmd1 <span class="token keyword">in</span> CMD1<span class="token punctuation">:</span>
+           <span class="token keyword">if</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>cmd1<span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+               is_cmd_music <span class="token operator">=</span> <span class="token boolean">True</span>
+               <span class="token keyword">break</span>
+       <span class="token keyword">for</span> cmd2 <span class="token keyword">in</span> CMD2<span class="token punctuation">:</span>
+           <span class="token keyword">if</span> re<span class="token punctuation">.</span>search<span class="token punctuation">(</span>cmd2<span class="token punctuation">,</span> text<span class="token punctuation">)</span><span class="token punctuation">:</span>
+               is_cmd_text <span class="token operator">=</span> <span class="token boolean">True</span>
+               <span class="token keyword">break</span>
+       <span class="token keyword">if</span> is_cmd_music<span class="token punctuation">:</span>
+           <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan<span class="token operator">==</span><span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;I&apos;ll play music for you~&quot;</span><span class="token punctuation">)</span>
+           <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan<span class="token operator">==</span><span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x9A6C;&#x4E0A;&#x4E3A;&#x60A8;&#x64AD;&#x653E;&#x97F3;&#x4E50;~&quot;</span><span class="token punctuation">)</span>
+           win32api<span class="token punctuation">.</span>ShellExecute<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">&quot;open&quot;</span><span class="token punctuation">,</span> os<span class="token punctuation">.</span>getcwd<span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">+</span> <span class="token string">&quot;\\music\\1.mp3&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token keyword">elif</span> is_cmd_text<span class="token punctuation">:</span>
+           <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;I&apos;ll open notepad for you~&quot;</span><span class="token punctuation">)</span>
+           <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x9A6C;&#x4E0A;&#x4E3A;&#x60A8;&#x6253;&#x5F00;&#x8BB0;&#x4E8B;&#x672C;~&quot;</span><span class="token punctuation">)</span>
+           win32api<span class="token punctuation">.</span>ShellExecute<span class="token punctuation">(</span><span class="token number">0</span><span class="token punctuation">,</span> <span class="token string">&quot;open&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;notepad.exe&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token string">&quot;&quot;</span><span class="token punctuation">,</span> <span class="token number">1</span><span class="token punctuation">)</span>
+       <span class="token keyword">else</span><span class="token punctuation">:</span>
+           <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;You said\n \&quot;&quot;</span> <span class="token operator">+</span> text <span class="token operator">+</span> <span class="token string">&quot;\&quot; \nbut I can&apos;t understand&quot;</span><span class="token punctuation">)</span>
+           <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+               self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x60A8;&#x8BF4;&#x4E86;\n \&quot;&quot;</span> <span class="token operator">+</span> text <span class="token operator">+</span> <span class="token string">&quot;\&quot; \n&#x4F46;&#x662F;&#x6211;&#x4E0D;&#x660E;&#x767D;&#x60A8;&#x7684;&#x610F;&#x601D;&#x5462;~&quot;</span><span class="token punctuation">)</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x5207;&#x6362; Sphinx &#x6A21;&#x5F0F;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">choose_sphinx</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>sphinx_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>google_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+       <span class="token comment"># self.ui.bing_bar.setChecked(False)</span>
+       <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;You change the Trans-API to Sphinx&quot;</span><span class="token punctuation">)</span>
+       <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x60A8;&#x5DF2;&#x5C06;&#x8BED;&#x8A00;&#x8BC6;&#x522B;API&#x5207;&#x6362;&#x4E3A;Sphinx&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_recognize_btn_style<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setEnabled<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>sphinx_action<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot; &#x221A;  Sphinx  &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>sphinx_action<span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>google_action<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;     Google  &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>google_action<span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>now_choose <span class="token operator">=</span> <span class="token string">&quot;sphinx&quot;</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x5207;&#x6362; Google &#x6A21;&#x5F0F;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">choose_google</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>sphinx_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>google_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+       <span class="token comment"># self.ui.bing_bar.setChecked(False)</span>
+       <span class="token keyword">if</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;en&quot;</span><span class="token punctuation">:</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;You change the Trans-API to Google&quot;</span><span class="token punctuation">)</span>
+       <span class="token keyword">elif</span> self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">==</span> <span class="token string">&quot;cn&quot;</span><span class="token punctuation">:</span>
+           self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x60A8;&#x5DF2;&#x5C06;&#x8BED;&#x8A00;&#x8BC6;&#x522B;API&#x5207;&#x6362;&#x4E3A;Google&quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_recognize_btn_style<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setEnabled<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>sphinx_action<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;     Sphinx  &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>sphinx_action<span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>google_action<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot; &#x221A;  Google  &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>google_action<span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>now_choose <span class="token operator">=</span> <span class="token string">&quot;google&quot;</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x5207;&#x6362;&#x4E2D;&#x6587;&#x6A21;&#x5F0F;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">choose_cn</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cn_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>en_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;&#x60A8;&#x5DF2;&#x7ECF;&#x5C06;&#x8BC6;&#x522B;&#x8BED;&#x8A00;&#x5207;&#x6362;&#x4E3A;&#x4E2D;&#x6587;~&quot;</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_recognize_btn_style<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setEnabled<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>en_action<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;        English  &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>en_action<span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cn_action<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;  &#x221A;    &#x4E2D;&#x6587;  &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cn_action<span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cn_ui_text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">=</span> <span class="token string">&quot;cn&quot;</span>
+</pre></blockquote>
+<blockquote>
+<p>&#x5207;&#x6362;&#x82F1;&#x6587;&#x6A21;&#x5F0F;</p>
+<pre data-role="codeBlock" data-info="python" class="language-python">   <span class="token keyword">def</span> <span class="token function">choose_en</span><span class="token punctuation">(</span>self<span class="token punctuation">)</span><span class="token punctuation">:</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cn_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">False</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>en_bar<span class="token punctuation">.</span>setChecked<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>label<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;You change the language to English~&quot;</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_recognize_btn_style<span class="token punctuation">(</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>recognize_btn<span class="token punctuation">.</span>setEnabled<span class="token punctuation">(</span><span class="token boolean">True</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>en_action<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;  &#x221A;    English  &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>en_action<span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cn_action<span class="token punctuation">.</span>setText<span class="token punctuation">(</span><span class="token string">&quot;       &#x4E2D;&#x6587;  &quot;</span><span class="token punctuation">)</span>
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>set_style<span class="token punctuation">(</span>self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>cn_action<span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>ui<span class="token punctuation">.</span>en_ui_text<span class="token punctuation">(</span><span class="token punctuation">)</span>
+
+       self<span class="token punctuation">.</span>now_choose_lan <span class="token operator">=</span> <span class="token string">&quot;en&quot;</span>
+</pre></blockquote>
+<hr>
+<h2 class="mume-header" id="4-%E7%95%8C%E9%9D%A2%E5%B1%95%E7%A4%BA%E9%83%A8%E5%88%86">4 &#x754C;&#x9762;&#x5C55;&#x793A;&#x90E8;&#x5206;</h2>
+
+<h4 class="mume-header" id="41-%E5%88%9D%E5%A7%8B%E9%A1%B5%E9%9D%A2">4.1 &#x521D;&#x59CB;&#x9875;&#x9762;</h4>
+
+ <center><img class="myImage" src="./imgs/init.jpg">   <img class="myImage" src="./imgs/init_cn.jpg"></center> <center>&#x82F1;&#x6587;&#x754C;&#x9762;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x4E2D;&#x6587;&#x754C;&#x9762;(&#x53F3;)</center>
+<h4 class="mume-header" id="42-%E6%A8%A1%E5%BC%8F%E5%88%87%E6%8D%A2">4.2 &#x6A21;&#x5F0F;&#x5207;&#x6362;</h4>
+
+ <center><img class="myImage" src="./imgs/choose_sphinx.jpg">   <img class="myImage" src="./imgs/choose_google.jpg"></center> <center>&#x9009;&#x62E9;Sphinx(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x9009;&#x62E9;Google(&#x53F3;)</center>
+<h4 class="mume-header" id="43-%E8%AF%AD%E8%A8%80%E5%88%87%E6%8D%A2">4.3 &#x8BED;&#x8A00;&#x5207;&#x6362;</h4>
+
+ <center><img class="myImage" src="./imgs/choose_en.jpg">   <img class="myImage" src="./imgs/choose_cn.jpg"></center> <center>&#x9009;&#x62E9;&#x82F1;&#x6587;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x9009;&#x62E9;&#x4E2D;&#x6587;(&#x53F3;)</center>
+<h4 class="mume-header" id="44-%E8%AF%86%E5%88%AB">4.4 &#x8BC6;&#x522B;</h4>
+
+ <center><img class="myImage" src="./imgs/listen.jpg">   <img class="myImage" src="./imgs/listen_cn.jpg"></center> <center>&#x82F1;&#x6587;&#x6A21;&#x5F0F;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x4E2D;&#x6587;&#x6A21;&#x5F0F;(&#x53F3;)</center>
+<h4 class="mume-header" id="45-%E9%94%99%E8%AF%AF%E6%8F%90%E7%A4%BA">4.5 &#x9519;&#x8BEF;&#x63D0;&#x793A;</h4>
+
+ <center><img class="myImage" src="./imgs/repeat.jpg">   <img class="myImage" src="./imgs/repeat_en.jpg"> <img class="myImage" src="./imgs/cant_understand.jpg">   <img class="myImage" src="./imgs/cant_understand_en.jpg"></center> <center>&#x8BF7;&#x91CD;&#x590D;(&#x5DE6;1~2)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#x65E0;&#x6CD5;&#x8BC6;&#x522B;(&#x53F3;3~4)</center>
+<hr>
+<h2 class="mume-header" id="5-%E8%87%AA%E6%B5%8B%E5%B1%95%E7%A4%BA">5 &#x81EA;&#x6D4B;&#x5C55;&#x793A;</h2>
+
+<h4 class="mume-header" id="51-%E8%8B%B1%E6%96%87sphinx-%E8%AF%86%E5%88%AB">5.1 &#x82F1;&#x6587;+Sphinx &#x8BC6;&#x522B;</h4>
+
+<blockquote></blockquote>
+  <center><img class="myImage" src="./imgs/5-1-1.jpg"> <img class="myImage" src="./imgs/5-1-2.jpg"> <img class="myImage" src="./imgs/5-1-3.jpg"></center> <center>&quot;I want to listen to music&quot;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;listen to music&quot;(&#x4E2D;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;music&quot;(&#x53F3;)</center>
+<blockquote></blockquote>
+  <center><img class="myImage" src="./imgs/5-1-4.jpg"> <img class="myImage" src="./imgs/5-1-5.jpg"> <img class="myImage" src="./imgs/5-1-6.jpg"></center> <center>&quot;I want to open notepad&quot;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;open notepad&quot;(&#x4E2D;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;notepad&quot;(&#x53F3;)</center>
+<h4 class="mume-header" id="52-%E8%8B%B1%E6%96%87google-%E8%AF%86%E5%88%AB">5.2 &#x82F1;&#x6587;+Google &#x8BC6;&#x522B;</h4>
+
+<blockquote></blockquote>
+  <center><img class="myImage" src="./imgs/5-2-1.jpg"> <img class="myImage" src="./imgs/5-2-2.jpg"> <img class="myImage" src="./imgs/5-2-3.jpg"></center> <center>&quot;I want to listen to music&quot;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;listen to music&quot;(&#x4E2D;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;music&quot;(&#x53F3;)</center>
+<blockquote></blockquote>
+  <center><img class="myImage" src="./imgs/5-2-4.jpg"> <img class="myImage" src="./imgs/5-2-5.jpg"> <img class="myImage" src="./imgs/5-2-6.jpg"></center> <center>&quot;I want to open notepad&quot;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;open notepad&quot;(&#x4E2D;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;notepad&quot;(&#x53F3;)</center>
+<h4 class="mume-header" id="53-%E4%B8%AD%E6%96%87sphinx-%E8%AF%86%E5%88%AB">5.3 &#x4E2D;&#x6587;+Sphinx &#x8BC6;&#x522B;</h4>
+
+<blockquote></blockquote>
+  <center><img class="myImage" src="./imgs/5-3-1.jpg"> <img class="myImage" src="./imgs/5-3-2.jpg"> <img class="myImage" src="./imgs/5-3-3.jpg"></center> <center>&quot;&#x6211;&#x60F3;&#x542C;&#x97F3;&#x4E50;&quot;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;&#x542C;&#x97F3;&#x4E50;&quot;(&#x4E2D;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;&#x97F3;&#x4E50;&quot;(&#x53F3;)</center>
+<blockquote></blockquote>
+  <center><img class="myImage" src="./imgs/5-3-4.jpg"> <img class="myImage" src="./imgs/5-3-5.jpg"> <img class="myImage" src="./imgs/5-3-6.jpg"></center> <center>&quot;&#x6211;&#x60F3;&#x6253;&#x5F00;&#x8BB0;&#x4E8B;&#x672C;&quot;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;&#x6253;&#x5F00;&#x8BB0;&#x4E8B;&#x672C;&quot;(&#x4E2D;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;&#x8BB0;&#x4E8B;&#x672C;&quot;(&#x53F3;)</center>
+<h4 class="mume-header" id="54-%E4%B8%AD%E6%96%87google-%E8%AF%86%E5%88%AB">5.4 &#x4E2D;&#x6587;+Google &#x8BC6;&#x522B;</h4>
+
+<blockquote></blockquote>
+  <center><img class="myImage" src="./imgs/5-4-1.jpg"> <img class="myImage" src="./imgs/5-4-2.jpg"> <img class="myImage" src="./imgs/5-4-3.jpg"></center> <center>&quot;&#x6211;&#x60F3;&#x542C;&#x97F3;&#x4E50;&quot;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;&#x542C;&#x97F3;&#x4E50;&quot;(&#x4E2D;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;&#x97F3;&#x4E50;&quot;(&#x53F3;)</center>
+<blockquote></blockquote>
+  <center> <img class="myImage" src="./imgs/5-4-4.jpg"> <img class="myImage" src="./imgs/5-4-5.jpg"> <img class="myImage" src="./imgs/5-4-6.jpg"></center> <center>&quot;&#x6211;&#x60F3;&#x6253;&#x5F00;&#x8BB0;&#x4E8B;&#x672C;&quot;(&#x5DE6;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;&#x6253;&#x5F00;&#x8BB0;&#x4E8B;&#x672C;&quot;(&#x4E2D;)&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&#xA0;&quot;&#x8BB0;&#x4E8B;&#x672C;&quot;(&#x53F3;)</center>
+<h2 class="mume-header" id="6-%E5%87%86%E7%A1%AE%E7%8E%87%E4%BB%A5%E5%8F%8A%E4%B8%80%E4%BA%9B%E6%83%B3%E6%B3%95">6 &#x51C6;&#x786E;&#x7387;&#x4EE5;&#x53CA;&#x4E00;&#x4E9B;&#x60F3;&#x6CD5;</h2>
+
+<h4 class="mume-header" id="61-%E5%87%86%E7%A1%AE%E7%8E%87">6.1 &#x51C6;&#x786E;&#x7387;</h4>
+
+<p>&#x9996;&#x5148;&#x5BF9;&#x4E8E;&#x8BED;&#x97F3;&#x8F93;&#x5165;&#x7684;&#x8BF4;&#x8BDD;&#x65F6;&#x957F;&#xFF0C;&#x65F6;&#x957F;&#x8D8A;&#x957F;&#xFF0C;&#x8BC6;&#x522B;&#x51C6;&#x786E;&#x7387;&#x4F1A;&#x8D8A;&#x9AD8;&#x3002;&#x6BD4;&#x5982;&#x4E00;&#x53E5;&#x8BDD;&#x8BC6;&#x522B;&#x7684;&#x51C6;&#x786E;&#x7387;&#x76F8;&#x6BD4;&#x4E00;&#x4E2A;&#x5355;&#x8BCD;&#x8981;&#x9AD8;&#x4E00;&#x70B9;&#xFF0C;&#x731C;&#x6D4B;&#x53EF;&#x80FD;&#x8BC6;&#x522B;&#x6A21;&#x578B;&#x4E2D;&#x8FD8;&#x6709;&#x8BED;&#x4E49;&#x4EA7;&#x751F;&#x5BF9;&#x6BD4;&#x529F;&#x80FD;&#xFF1F;</p>
+<p>&#x7136;&#x540E;&#x5728;&#x4EFB;&#x4F55;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>recognize_google()</code>&#x7684;&#x51C6;&#x786E;&#x7387;&#x90FD;&#x8981;&#x6BD4; <code>recognize_sphinx()</code><strong>&#x597D;&#x7684;&#x591A;</strong>&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x7F3A;&#x61BE;&#x662F;<code>recognize_google()</code>&#x9700;&#x8981;&#x79D1;&#x5B66;&#x4E0A;&#x7F51;&#xFF0C;&#x5426;&#x5219; API &#x5C06;&#x65E0;&#x6CD5;&#x6B63;&#x5E38;&#x4F7F;&#x7528;</p>
+<p>&#x4F46;&#x662F;<code>recognize_sphinx()</code>&#x53EF;&#x4EE5;&#x652F;&#x6301;&#x79BB;&#x7EBF;&#x4F7F;&#x7528;&#xFF0C;&#x6240;&#x4EE5;&#x8BC6;&#x522B;&#x901F;&#x5EA6;&#x6BD4;<code>recognize_google()</code>&#x5FEB;</p>
+<h4 class="mume-header" id="62-%E5%88%86%E6%9E%90">6.2 &#x5206;&#x6790;</h4>
+
+<ul>
+<li>
+<p><code>recognize_sphinx()</code>&#x6240;&#x91C7;&#x7528;&#x7684; CMU Sphinx &#x5F15;&#x64CE;&#x662F;&#x7531;<a href="https://en.wikipedia.org/wiki/Kai-Fu_Lee">&#x674E;&#x5F00;&#x590D;</a>&#x5F00;&#x53D1;&#x7684;&#xFF0C;&#x5176;&#x91C7;&#x7528; HMM (&#x9690;&#x9A6C;&#x5C14;&#x53EF;&#x592B;&#x58F0;&#x5B66;&#x6A21;&#x578B;)&#x548C; n-gram &#x7EDF;&#x8BA1;&#x8BED;&#x8A00;&#x6A21;&#x578B;&#x3002;&#x5728;&#x5F53;&#x65F6;&#x5177;&#x6709;&#x5DE8;&#x5927;&#x7684;&#x4E89;&#x8BAE;&#xFF0C;&#x53EA;&#x5177;&#x6709;&#x5386;&#x53F2;&#x610F;&#x4E49;&#x3002;&#x800C;&#x672C;&#x9879;&#x76EE;&#x6240;&#x7528;&#x5230;&#x7684;&#x5305; PocketSphinx &#x76EE;&#x524D;&#x4E5F;&#x6B63;&#x5728;&#x4E0D;&#x65AD;&#x5B8C;&#x5584;&#x4E2D;&#xFF0C;&#x6027;&#x80FD;&#x4EE5;&#x53CA;&#x51C6;&#x786E;&#x7387;&#x81EA;&#x7136;&#x6709;&#x9650;&#xFF0C;&#x4F46;&#x5BF9;&#x4E8E;&#x8BED;&#x901F;&#x6162;&#x7684;&#x957F;&#x53E5;&#x5B50;&#x5982;&quot;I want to listen to music&quot;&#x8FD8;&#x662F;&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x8BC6;&#x522B;&#x51FA;&#x6765;&#x3002;</p>
+</li>
+<li>
+<p>&#x800C;<code>recognize_google()</code>&#x6240;&#x91C7;&#x7528;&#x7684; Google Web Speech API &#x4E3A; Google &#x6240;&#x5F00;&#x53D1;&#x5E76;&#x91C7;&#x7528;&#x7684;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x5F15;&#x64CE; API&#xFF0C;&#x901A;&#x8FC7;&#x8054;&#x7F51;&#x5728;&#x7EBF;&#x8BC6;&#x522B;&#xFF0C;&#x5176;&#x51C6;&#x786E;&#x7387;&#x76F8;&#x5BF9;&#x9AD8;&#x5F97;&#x591A;&#x3002;</p>
+</li>
+<li>
+<p>&#x4E8B;&#x5B9E;&#x4E5F;&#x8BC1;&#x660E;&#xFF0C;&#x5982;&#x679C;&#x60A8;&#x4F7F;&#x7528;&#x4E86;&#x4E0A;&#x8FF0;&#x7A0B;&#x5E8F;&#x8FDB;&#x884C;&#x5BF9;&#x6BD4;&#x540E;&#xFF0C;&#x5E94;&#x8BE5;&#x53EF;&#x4EE5;&#x53D1;&#x73B0;:&#x5BF9;&#x4E8E;&#x957F;&#x53E5;&#x5B50;&#xFF0C;<code>recognize_google()</code>&#x51E0;&#x4E4E;&#x53EF;&#x4EE5;&#x8FBE;&#x5230; <code>80%</code>&#x7684;&#x8BC6;&#x522B;&#x51C6;&#x786E;&#x7387;&#xFF0C;&#x5728;&#x65E0;&#x566A;&#x97F3;&#x3001;&#x53D1;&#x97F3;&#x6807;&#x51C6;&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#x751A;&#x81F3;&#x53EF;&#x4EE5;&#x8FBE;&#x5230; <code>90%</code>&#x4EE5;&#x4E0A;&#xFF1B;&#x5BF9;&#x4E8E;&#x77ED;&#x53E5;&#x5B50;&#x6216;&#x5355;&#x8BCD;&#x4E5F;&#x57FA;&#x672C;&#x53EF;&#x4EE5;&#x6709;<code>70%</code>&#x3002;&#x800C;<code>recognize_sphinx()</code>&#x5373;&#x4F7F;&#x5728;&#x65E0;&#x566A;&#x97F3;&#x3001;&#x53D1;&#x97F3;&#x6807;&#x51C6;&#x60C5;&#x51B5;&#x4E0B;&#x7684;&#x51C6;&#x786E;&#x7387;&#x4E5F;&#x76F8;&#x5BF9;&#x8F83;&#x4F4E;&#xFF0C;&#x957F;&#x53E5;&#x5B50;&#x5927;&#x6982;&#x6709;<code>60%</code>,&#x77ED;&#x53E5;&#x5B50;&#x6216;&#x5355;&#x8BCD;&#x4F30;&#x8BA1;&#x53EA;&#x6709;<code>30%</code>&#x3002;</p>
+</li>
+<li>
+<h6>&#x4EE5;&#x4E0A;&#x6240;&#x6709;&#x6570;&#x636E;&#x5747;&#x4E3A;&#x6781;&#x4E3A;&#x6709;&#x9650;&#x7684;&#x6D4B;&#x8BD5;&#x5927;&#x81F4;&#x4F30;&#x8BA1;&#xFF0C;&#x4E0D;&#x4EE3;&#x8868;&#x4EFB;&#x4F55;&#x771F;&#x5B9E;&#x6570;&#x636E;&#xFF0C;&#x53EA;&#x80FD;&#x63D0;&#x4F9B;&#x4E00;&#x4E2A;&#x76F8;&#x5BF9;&#x7684;&#x53C2;&#x8003;</h6>
+</li>
+</ul>
+<h4 class="mume-header" id="63-%E5%8F%AF%E8%BF%9B%E8%A1%8C%E7%9A%84%E6%94%B9%E8%BF%9B">6.3 &#x53EF;&#x8FDB;&#x884C;&#x7684;&#x6539;&#x8FDB;</h4>
+
+<ul>
+<li>&#x56E0;&#x4E3A;<code>recognize_google()</code>&#x4E5F;&#x5B58;&#x5728;&#x7740;&#x7F51;&#x7EDC;&#x73AF;&#x5883;&#x7684;&#x5236;&#x7EA6;&#xFF0C;&#x4E3A;&#x4E86;&#x666E;&#x9002;&#x6027;&#xFF0C;&#x5E94;&#x8BE5;&#x6700;&#x597D;&#x91C7;&#x7528;&#x79BB;&#x7EBF;&#x578B;&#x7684;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x6A21;&#x578B;</li>
+<li>&#x53EF;&#x4EE5;&#x901A;&#x8FC7; NLP&#x3001;LSTM&#x3001;DFSMN &#x7B49;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x6846;&#x67B6;&#x4E0E;&#x6A21;&#x578B;&#x6765;&#x8FDB;&#x884C;&#x642D;&#x5EFA;&#xFF0C;&#x4EE5;&#x53CA;&#x4E0D;&#x65AD;&#x5730;&#x6539;&#x8FDB;&#x8BED;&#x97F3;&#x8BC6;&#x522B;&#x5B66;&#x4E60;&#x7B97;&#x6CD5;&#x6765;&#x8FDB;&#x884C;&#x4F18;&#x5316;</li>
+</ul>
+<h4 class="mume-header" id="span-idjump64-sphinx-%E4%B8%AD%E6%96%87%E6%94%AF%E6%8C%81-span"><span id="jump">6.4 Sphinx &#x4E2D;&#x6587;&#x652F;&#x6301; </span></h4>
+
+<p>&#x5C06;&#x6587;&#x4EF6;&#x8DEF;&#x5F84;&#x4E2D;&#x7684; <code>zh-CN/</code>&#x6587;&#x4EF6;&#x5939;&#x6574;&#x4E2A;&#x79FB;&#x52A8;&#x5230; <code>speech_recognition</code> &#x5305;&#x4E0B;<code>pocketsphinx-data/</code>&#x4E2D;<br>
+&#x67E5;&#x770B;<code>speech_recognition</code>&#x8DEF;&#x5F84;&#x53EF;&#x901A;&#x8FC7;&#x5728;<code>python console</code>&#xFF0C;&#x8F93;&#x5165;<code>import speech_recognition; print(speech_recognition.__path__)</code></p>
+<ul>
+<li>&#x8DEF;&#x5F84;&#x5C55;&#x793A;:<code>D:\\ProgramData\\Anaconda\\envs\\tensorflow\\lib\\site-packages\\speech_recognition</code></li>
+</ul>
+
+      </div>
+      
+      
+    
+    
+    
+    
+    
+    
+    
+    
+  
+    </body></html>
