@@ -1,9 +1,3 @@
-.myImage{
-  height:360px;
-  width:200px;
-}
-
-
 # Automatic Speech Recognition(ASR)
 
 ---
