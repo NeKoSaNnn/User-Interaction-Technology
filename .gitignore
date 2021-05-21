@@ -1,0 +1,5 @@
+/Assignment2/server/database/*
+/Assignment2/server/saved_features_recom.txt
+/Assignment2/server/neighbor_list_recom.pickle
+/Assignment2/server/imagenet/inception-2015-12-05.tgz
+/Assignment2/server/imagenet/classify_image_graph_def.pb
