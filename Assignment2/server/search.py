@@ -51,25 +51,7 @@ def get_top_k_similar(image_data, pred, pred_final, k):
                             for ith_row, pred_row in enumerate(pred)])[:k]
     print(top_k_ind)
 
-    tag_cnt = {}
-    tag_dir = "database/tags/"
-    for now_tag in os.listdir(tag_dir):
-        with open(os.path.join(tag_dir, now_tag)) as f:
-            for line in f.readlines():
-                for now_id in top_k_ind:
-                    if line.find(str(now_id)):
-                        str_tag = now_tag.split(".")[0].split("_")[0]
-                        if str_tag != "README":
-                            if str_tag not in tag_cnt:
-                                tag_cnt[str_tag] = 1
-                            else:
-                                tag_cnt[str_tag] += 1
-                        break
-    sorted(tag_cnt.items(), key=lambda kv: (kv[1], kv[0]), reverse=True)
-    f = open("static/result/tag.txt", "w+")
-    for tag, cnt in tag_cnt.items():
-        f.write(tag + "\t" + str(cnt) + "\n")
-    f.close()
+    img_ids=[]
 
     for i, neighbor in enumerate(top_k_ind):
         image = imread(pred_final[neighbor])
@@ -78,9 +60,32 @@ def get_top_k_similar(image_data, pred, pred_final, k):
         name = pred_final[neighbor]
         tokens = name.split("\\")
         img_name = tokens[-1]
+        img_ids.append(img_name.split(".")[0][2:])
         print(img_name)
         name = 'static/result/' + img_name
         imsave(name, image)
+
+    print(img_ids)
+
+    tag_cnt = {}
+    tag_dir = "database/tags/"
+    for now_tag in os.listdir(tag_dir):
+        with open(os.path.join(tag_dir, now_tag)) as f:
+            for line in f.readlines():
+                for now_id in img_ids:
+                    if now_id == line.replace(" ", "").replace("\t", "").strip():
+                        str_tag = now_tag.split(".")[0].split("_")[0]
+                        if str_tag != "README":
+                            if str_tag not in tag_cnt:
+                                tag_cnt[str_tag] = 1
+                            else:
+                                tag_cnt[str_tag] += 1
+                        break
+    sorted(tag_cnt.items(), key=lambda kv: kv[1], reverse=True)
+    f = open("static/result/tag.txt", "w+")
+    for tag, cnt in tag_cnt.items():
+        f.write(tag + "\t" + str(cnt) + "\n")
+    f.close()
 
 
 def create_inception_graph():
