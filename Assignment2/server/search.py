@@ -51,7 +51,7 @@ def get_top_k_similar(image_data, pred, pred_final, k):
                             for ith_row, pred_row in enumerate(pred)])[:k]
     print(top_k_ind)
 
-    img_ids=[]
+    img_ids = []
 
     for i, neighbor in enumerate(top_k_ind):
         image = imread(pred_final[neighbor])
@@ -67,7 +67,7 @@ def get_top_k_similar(image_data, pred, pred_final, k):
 
     print(img_ids)
 
-    tag_cnt = {}
+    tag_imgs = {}
     tag_dir = "database/tags/"
     for now_tag in os.listdir(tag_dir):
         with open(os.path.join(tag_dir, now_tag)) as f:
@@ -76,15 +76,18 @@ def get_top_k_similar(image_data, pred, pred_final, k):
                     if now_id == line.replace(" ", "").replace("\t", "").strip():
                         str_tag = now_tag.split(".")[0].split("_")[0]
                         if str_tag != "README":
-                            if str_tag not in tag_cnt:
-                                tag_cnt[str_tag] = 1
+                            if str_tag not in tag_imgs:
+                                tag_imgs[str_tag] = ["im" + now_id + ".jpg"]
                             else:
-                                tag_cnt[str_tag] += 1
+                                tag_imgs[str_tag].append("im" + now_id + ".jpg")
                         break
-    sorted(tag_cnt.items(), key=lambda kv: kv[1], reverse=True)
+    sorted_tag_imgs = sorted(tag_imgs.items(), key=lambda item: len(item[1]), reverse=True)
     f = open("static/result/tag.txt", "w+")
-    for tag, cnt in tag_cnt.items():
-        f.write(tag + "\t" + str(cnt) + "\n")
+    for now_tag_imgs in sorted_tag_imgs:
+        f.write(now_tag_imgs[0] + "\n")
+        for img in now_tag_imgs[1]:
+            f.write(img + "\t")
+        f.write("\n")
     f.close()
 
 

@@ -38,7 +38,7 @@ $(document).ready(function () {
         validateInitialCount: true,
         maxFileCount: 1,
         msgPlaceholder: "Select file to search !",
-        previewClass:"preview",
+        previewClass: "preview",
 
         //enctype: 'multipart/form-data',
         //uploadExtraData: function () {  // uploadExtraData携带附加参数，上传时携带csrftoken
@@ -47,16 +47,61 @@ $(document).ready(function () {
         initialPreview: [],　　// 默认预览设置，回显时会用到
         initialPreviewConfig: [],　　// 默认预览的详细配置，回显时会用到
     }).on("filebatchuploadsuccess", function (e, data, previewId, index) {
-        console.log(data.response.image0);
-        $("#img0").attr("src", data.response.image0);
-        $("#img1").attr("src", data.response.image1);
-        $("#img2").attr("src", data.response.image2);
-        $("#img3").attr("src", data.response.image3);
-        $("#img4").attr("src", data.response.image4);
-        $("#img5").attr("src", data.response.image5);
-        $("#img6").attr("src", data.response.image6);
-        $("#img7").attr("src", data.response.image7);
-        $("#img8").attr("src", data.response.image8);
+        console.log(data.response);
+        $("#upload_img").attr("src", data.response.select_img)
+        for (let i = 0; i < data.response.all_imgs.length; ++i) {
+            let now_src = data.response.all_imgs[i];
+            let now_img = $.createElement("img");
+            now_img.attr("src", now_src);
+            now_img.attr("alt", "Norway");
+            $("#all-tabs-above").appendChild(now_img);
+            /*
+                <img id="img6" src="" alt="Norway" style="
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+        transition: 0.3s;
+        width: 200px;
+        height: 200px;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-right: 0px;
+        padding-left: 5px;
+        border-left-width: 0px;
+        border-bottom-width: 0px;border-right-width: 0px;
+    " width="200" height="200">
+    */
+        }
+
+        for (let i = 0; i < data.response.tags.length; ++i) {
+            var now_tag = data.response.tags[i];
+            var now_li = $.createElement("li");
+            now_li.attr("class", "nav-item");
+            var now_a = $.createElement("a");
+            now_a.attr("class", "nav-link");
+            now_a.attr("id", now_tag + "-tab-tabs-above")
+            now_a.attr("href", "#" + now_tag + "-tabs-above")
+            now_a.attr("role", "tab-kv")
+            now_a.attr("data-toggle", "tab");
+            now_a.attr("aria-controls", now_tag);
+            now_li.appendChild(now_a)
+            $("#myTab-tabs-above").appendChild(now_li)
+
+            var now_div = $.createElement("div");
+            now_div.attr("class", "tab-pane fade");
+            now_div.attr("id", now_tag + "-tabs-above");
+            now_div.attr("role", "tabpanel");
+            now_div.attr("aria-labelledby", now_tag + "-tab-tabs-above");
+
+            for (let j = 0; j < data.response[now_tag]; ++j) {
+                let now_src = data.response[now_tag][i];
+                let now_img = $.createElement("img");
+                now_img.attr("src", now_src);
+                now_img.attr("alt", "Norway");
+                now_div.appendChild(now_img)
+            }
+
+            $("#myTabContent-tabs-above").appendChild(now_div)
+        }
+
         $('#table').show();
         $('#clear').show();
     }).on('filebrowse', function (event) {

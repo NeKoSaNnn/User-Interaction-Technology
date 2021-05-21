@@ -79,17 +79,26 @@ def upload_img():
             image_path = "/result"
             image_list = [os.path.join(image_path, file) for file in os.listdir(result)
                           if not file.startswith('.')]
-            images = {
-                'image0': image_list[0],
-                'image1': image_list[1],
-                'image2': image_list[2],
-                'image3': image_list[3],
-                'image4': image_list[4],
-                'image5': image_list[5],
-                'image6': image_list[6],
-                'image7': image_list[7],
-                'image8': image_list[8]
-            }
+            images = {}
+            with open("static/result/tag.txt") as f:
+                is_tag = True
+                now_tag = ""
+                images["tags"]=[]
+                for line in f.readlines():
+                    if is_tag:
+                        is_tag = False
+                        now_tag_str = line.replace(" ", "").replace("\t", "").strip()
+                        now_tag = now_tag_str
+                        images[now_tag] = []
+                        images["tags"].append(now_tag)
+                    else:
+                        is_tag = True
+                        now_imgs = line.split("\t")
+                        for img in now_imgs:
+                            if img and img != "\n":
+                                images[now_tag].append(os.path.join(image_path, img))
+            images["all_imgs"] = image_list
+            images["select_img"]=os.path.join("uploads/",file.filename)
 
             return jsonify(images)
 
