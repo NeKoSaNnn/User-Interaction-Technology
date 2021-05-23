@@ -1467,6 +1467,7 @@ input[type='checkbox'] {
     border-radius: 0.25rem;
     background: #fff;
     text-align: left;
+    z-index:999;
 }
 
 .lightbox-basic img {

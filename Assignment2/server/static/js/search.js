@@ -1,4 +1,5 @@
-$(document).ready(function () {
+(function ($) {
+    "use strict";
     toastr.options = {
         "closeButton": false,
         "newestOnTop": true,
@@ -14,6 +15,7 @@ $(document).ready(function () {
         "showMethod": "fadeIn",
         "hideMethod": "fadeOut"
     };
+
     $("#search_bar").hide();
     $("#mytab").hide();
     $("#clear_div").css("display", "none");
@@ -102,7 +104,34 @@ $(document).ready(function () {
                 "        border-bottom-width: 0px;border-right-width: 0px;\n" +
                 "    \" width=\"200\" height=\"200\">");
             now_img.attr("src", now_src);
-            $("#all-tabs-above").append(now_img);
+            let now_a = $("<a class=\"popup-with-move-anim pop\"></a>")
+            now_a.attr("href", "#" + now_src.split("\\")[1].split(".")[0])
+            now_a.append(now_img)
+            $("#all-tabs-above").append(now_a);
+
+            let now_div = $("<div class=\"lightbox-basic zoom-anim-dialog mfp-hide\">\n" +
+                "    <div class=\"row\">\n" +
+                "        <button title=\"Close (Esc)\" type=\"button\" class=\"mfp-close x-button\">×</button>\n" +
+                "        <div class=\"col-lg-12\" style=\"text-align:center;margin:auto 0;\">\n" +
+                "            <img src='' class=\"img-fluid\" alt='image'>\n" +
+                "        </div>\n" +
+                "    </div>\n" +
+                "</div>")
+            now_div.attr("id", now_src.split("\\")[1].split(".")[0]);
+            now_div.find(".img-fluid").attr("src", now_src);
+            $("#light_box").append(now_div);
+
+            $('.popup-with-move-anim').magnificPopup({
+                type: 'inline',
+                fixedContentPos: false, /* keep it false to avoid html tag shift with margin-right: 17px */
+                fixedBgPos: true,
+                overflowY: 'auto',
+                closeBtnInside: true,
+                preloader: false,
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-slide-bottom'
+            });
         }
         for (let i = 0; i < Math.min(data.response.all_tags.length, 9); ++i) {
             let now_tag = data.response.all_tags[i];
@@ -140,10 +169,25 @@ $(document).ready(function () {
                     "        border-bottom-width: 0px;border-right-width: 0px;\n" +
                     "    \" width=\"200\" height=\"200\">");
                 now_img.attr("src", now_src);
-                now_div.append(now_img)
+                let now_a = $("<a class=\"popup-with-move-anim\"></a>")
+                now_a.attr("href", "#" + now_src.split("\\")[1].split(".")[0])
+                now_a.append(now_img)
+                now_div.append(now_a)
             }
 
-            $("#myTabContent-tabs-above").append(now_div)
+            $("#myTabContent-tabs-above").append(now_div);
+
+            $('.popup-with-move-anim').magnificPopup({
+                type: 'inline',
+                fixedContentPos: false, /* keep it false to avoid html tag shift with margin-right: 17px */
+                fixedBgPos: true,
+                overflowY: 'auto',
+                closeBtnInside: true,
+                preloader: false,
+                midClick: true,
+                removalDelay: 300,
+                mainClass: 'my-mfp-slide-bottom'
+            });
         }
 
         $("#mytab").fadeIn(500);
@@ -153,6 +197,7 @@ $(document).ready(function () {
         $("#myTabContent-tabs-above").children(".otherscontent").remove();
         $("#all-tabs-above").children().remove();
         $("#myTab-tabs-above").children(".otherli").remove();
+        $("#light_box").children().remove()
         $('#search_input').fileinput("clear");
         $("#mytab").hide();
         $("#clear_div").css("display", "none")
@@ -160,10 +205,13 @@ $(document).ready(function () {
         $("#myTabContent-tabs-above").children(".otherscontent").remove();
         $("#all-tabs-above").children().remove();
         $("#myTab-tabs-above").children(".otherli").remove();
+        $("#light_box").children().remove()
         $("#mytab").hide();
         $("#clear_div").css("display", "none")
     });
-});
+
+    /* Lightbox - Magnific Popup */
+})(jQuery);
 
 $("#clear_btn").click(function () {
     return new Promise(function (resolve, reject) {
@@ -181,6 +229,7 @@ $("#clear_btn").click(function () {
                         $("#myTabContent-tabs-above").children(".otherscontent").remove();
                         $("#all-tabs-above").children().remove();
                         $("#myTab-tabs-above").children(".otherli").remove();
+                        $("#light_box").children().remove()
                         $('#search_input').fileinput("clear");
                         $("#mytab").hide();
                         $("#clear_div").css("display", "none")
