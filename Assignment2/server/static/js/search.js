@@ -103,16 +103,11 @@ $(document).ready(function () {
                 "    \" width=\"200\" height=\"200\">");
             now_img.attr("src", now_src);
             $("#all-tabs-above").append(now_img);
-            /*
-
-    */
         }
-
-
         for (let i = 0; i < Math.min(data.response.all_tags.length, 9); ++i) {
             let now_tag = data.response.all_tags[i];
             let now_li = $("<li></li>");
-            now_li.addClass("nav-item");
+            now_li.addClass("nav-item otherli");
             let now_a = $("<a></a>");
             now_a.addClass("nav-link");
             now_a.attr("id", now_tag + "-tab-tabs-above")
@@ -125,7 +120,7 @@ $(document).ready(function () {
             $("#myTab-tabs-above").append(now_li)
 
             var now_div = $("<div></div>");
-            now_div.addClass("tab-pane fade");
+            now_div.addClass("tab-pane fade otherscontent");
             now_div.attr("id", now_tag + "-tabs-above");
             now_div.attr("role", "tabpanel");
             now_div.attr("aria-labelledby", now_tag + "-tab-tabs-above");
@@ -155,7 +150,16 @@ $(document).ready(function () {
         $("html,body").animate({scrollTop: $("#mytab").offset().top}, 500);
         $("#clear_div").css("display", "")
     }).on('filebrowse', function (event) {
+        $("#myTabContent-tabs-above").children(".otherscontent").remove();
+        $("#all-tabs-above").children().remove();
+        $("#myTab-tabs-above").children(".otherli").remove();
         $('#search_input').fileinput("clear");
+        $("#mytab").hide();
+        $("#clear_div").css("display", "none")
+    }).on('fileselect', function (event) {
+        $("#myTabContent-tabs-above").children(".otherscontent").remove();
+        $("#all-tabs-above").children().remove();
+        $("#myTab-tabs-above").children(".otherli").remove();
         $("#mytab").hide();
         $("#clear_div").css("display", "none")
     });
@@ -174,6 +178,9 @@ $("#clear_btn").click(function () {
                     action: function () {
                         toastr.info("Clear ~ ");
                         resolve();
+                        $("#myTabContent-tabs-above").children(".otherscontent").remove();
+                        $("#all-tabs-above").children().remove();
+                        $("#myTab-tabs-above").children(".otherli").remove();
                         $('#search_input').fileinput("clear");
                         $("#mytab").hide();
                         $("#clear_div").css("display", "none")
