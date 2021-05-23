@@ -107,7 +107,7 @@
             let now_a = $("<a class=\"popup-with-move-anim pop\"></a>")
             now_a.attr("href", "#" + now_src.split("\\")[1].split(".")[0])
             now_a.append(now_img)
-            $("#all-tabs-above").append(now_a);
+            $("#all-tabs-above").append(now_a).addClass("show active");
 
             let now_div = $("<div class=\"lightbox-basic zoom-anim-dialog mfp-hide\">\n" +
                 "    <div class=\"row\">\n" +
