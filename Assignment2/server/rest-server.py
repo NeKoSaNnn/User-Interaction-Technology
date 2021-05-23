@@ -5,6 +5,8 @@
 # here as json and being branched out to each projects. Basic level of validation is also being done in this file. #                                                                                                                                  	       
 # -------------------------------------------------------------------------------------------------------------------------------
 ################################################################################################################################
+import ctypes
+
 from flask import Flask, jsonify, abort, request, make_response, url_for, redirect, render_template
 from flask_httpauth import HTTPBasicAuth
 from werkzeug.utils import secure_filename
@@ -18,7 +20,7 @@ from scipy import ndimage
 
 # from scipy.misc import imsave
 
-UPLOAD_FOLDER = 'uploads'
+UPLOAD_FOLDER = 'static/uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 from tensorflow.python.platform import gfile
 
@@ -50,6 +52,9 @@ print("loaded extracted_features")
 #           filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def upload_img():
+    if gfile.Exists(UPLOAD_FOLDER):
+        shutil.rmtree(UPLOAD_FOLDER)
+    os.mkdir(UPLOAD_FOLDER)
     print("image upload")
     result = 'static/result'
     if not gfile.Exists(result):
@@ -75,30 +80,30 @@ def upload_img():
             file.save(os.path.join(app.config['UPLOAD_FOLDER'], filename))
             inputloc = os.path.join(app.config['UPLOAD_FOLDER'], filename)
             recommend(inputloc, extracted_features)
-            os.remove(inputloc)
             image_path = "/result"
             image_list = [os.path.join(image_path, file) for file in os.listdir(result)
-                          if not file.startswith('.')]
+                          if not file.startswith('.') and file != "tag.txt"]
             images = {}
             with open("static/result/tag.txt") as f:
                 is_tag = True
                 now_tag = ""
-                images["tags"]=[]
+                images["all_tags"] = []
                 for line in f.readlines():
                     if is_tag:
                         is_tag = False
                         now_tag_str = line.replace(" ", "").replace("\t", "").strip()
                         now_tag = now_tag_str
                         images[now_tag] = []
-                        images["tags"].append(now_tag)
+                        images["all_tags"].append(now_tag)
                     else:
                         is_tag = True
                         now_imgs = line.split("\t")
                         for img in now_imgs:
-                            if img and img != "\n":
-                                images[now_tag].append(os.path.join(image_path, img))
+                            now_path=os.path.join(image_path, img)
+                            if img and img != "\n" and now_path not in images[now_tag]:
+                                images[now_tag].append(now_path)
             images["all_imgs"] = image_list
-            images["select_img"]=os.path.join("uploads/",file.filename)
+            images["select_img"] = os.path.join("uploads/", file.filename)
 
             return jsonify(images)
 

@@ -76,10 +76,11 @@ def get_top_k_similar(image_data, pred, pred_final, k):
                     if now_id == line.replace(" ", "").replace("\t", "").strip():
                         str_tag = now_tag.split(".")[0].split("_")[0]
                         if str_tag != "README":
+                            now_id_str="im" + now_id + ".jpg"
                             if str_tag not in tag_imgs:
-                                tag_imgs[str_tag] = ["im" + now_id + ".jpg"]
-                            else:
-                                tag_imgs[str_tag].append("im" + now_id + ".jpg")
+                                tag_imgs[str_tag] = [now_id_str]
+                            elif now_id_str not in tag_imgs[str_tag]:
+                                tag_imgs[str_tag].append(now_id_str)
                         break
     sorted_tag_imgs = sorted(tag_imgs.items(), key=lambda item: len(item[1]), reverse=True)
     f = open("static/result/tag.txt", "w+")
@@ -135,4 +136,4 @@ def recommend(imagePath, extracted_features):
     with open('neighbor_list_recom.pickle', 'rb') as f:
         neighbor_list = pickle.load(f)
     print("loaded images")
-    get_top_k_similar(features, extracted_features, neighbor_list, k=9)
+    get_top_k_similar(features, extracted_features, neighbor_list, k=25)

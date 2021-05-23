@@ -1,5 +1,43 @@
 $(document).ready(function () {
+    toastr.options = {
+        "closeButton": false,
+        "newestOnTop": true,
+        "progressBar": false,
+        "positionClass": "toast-top-right",
+        "preventDuplicates": false,
+        "showDuration": "100",
+        "hideDuration": "1000",
+        "timeOut": "2500",
+        "extendedTimeOut": "1000",
+        "showEasing": "swing",
+        "hideEasing": "linear",
+        "showMethod": "fadeIn",
+        "hideMethod": "fadeOut"
+    };
     $("#search_bar").hide();
+    $("#mytab").hide();
+    $("#clear_div").css("display", "none");
+
+    var stars = 800; /*星星的密集程度，数字越大越多*/
+    var $stars = $(".stars");
+    var r = 800; /*星星的看起来的距离,值越大越远,可自行调制到自己满意的样子*/
+    for (var i = 0; i < stars; i++) {
+        var $star = $("<div/>").addClass("star");
+        $stars.append($star);
+    }
+    $(".star").each(function () {
+        var cur = $(this);
+        var s = 0.2 + (Math.random() * 1);
+        var curR = r + (Math.random() * 300);
+        cur.css({
+            transformOrigin: "0 0 " + curR + "px",
+            transform: " translate3d(0,0,-" + curR + "px) rotateY(" + (Math.random() * 360) +
+                "deg) rotateX(" + (Math.random() * -50) + "deg) scale(" + s + "," + s + ")"
+
+        })
+    })
+
+
     $('#search_input').fileinput({
         theme: "fas",
         //browseClass:"btn btn-primary btn-block",
@@ -47,126 +85,118 @@ $(document).ready(function () {
         initialPreview: [],　　// 默认预览设置，回显时会用到
         initialPreviewConfig: [],　　// 默认预览的详细配置，回显时会用到
     }).on("filebatchuploadsuccess", function (e, data, previewId, index) {
-        console.log(data.response);
+        toastr.success("Image Search Complete !");
         $("#upload_img").attr("src", data.response.select_img)
         for (let i = 0; i < data.response.all_imgs.length; ++i) {
             let now_src = data.response.all_imgs[i];
-            let now_img = $.createElement("img");
+            let now_img = $("<img src=\"\" alt=\"Norway\" style=\"\n" +
+                "        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n" +
+                "        transition: 0.3s;\n" +
+                "        width: 200px;\n" +
+                "        height: 200px;\n" +
+                "        padding-top: 5px;\n" +
+                "        padding-bottom: 5px;\n" +
+                "        padding-right: 0px;\n" +
+                "        padding-left: 5px;\n" +
+                "        border-left-width: 0px;\n" +
+                "        border-bottom-width: 0px;border-right-width: 0px;\n" +
+                "    \" width=\"200\" height=\"200\">");
             now_img.attr("src", now_src);
-            now_img.attr("alt", "Norway");
-            $("#all-tabs-above").appendChild(now_img);
+            $("#all-tabs-above").append(now_img);
             /*
-                <img id="img6" src="" alt="Norway" style="
-        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
-        transition: 0.3s;
-        width: 200px;
-        height: 200px;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        padding-right: 0px;
-        padding-left: 5px;
-        border-left-width: 0px;
-        border-bottom-width: 0px;border-right-width: 0px;
-    " width="200" height="200">
+
     */
         }
 
-        for (let i = 0; i < data.response.tags.length; ++i) {
-            var now_tag = data.response.tags[i];
-            var now_li = $.createElement("li");
-            now_li.attr("class", "nav-item");
-            var now_a = $.createElement("a");
-            now_a.attr("class", "nav-link");
+
+        for (let i = 0; i < Math.min(data.response.all_tags.length, 9); ++i) {
+            let now_tag = data.response.all_tags[i];
+            let now_li = $("<li></li>");
+            now_li.addClass("nav-item");
+            let now_a = $("<a></a>");
+            now_a.addClass("nav-link");
             now_a.attr("id", now_tag + "-tab-tabs-above")
             now_a.attr("href", "#" + now_tag + "-tabs-above")
             now_a.attr("role", "tab-kv")
             now_a.attr("data-toggle", "tab");
             now_a.attr("aria-controls", now_tag);
-            now_li.appendChild(now_a)
-            $("#myTab-tabs-above").appendChild(now_li)
+            now_a.text(now_tag);
+            now_li.append(now_a)
+            $("#myTab-tabs-above").append(now_li)
 
-            var now_div = $.createElement("div");
-            now_div.attr("class", "tab-pane fade");
+            var now_div = $("<div></div>");
+            now_div.addClass("tab-pane fade");
             now_div.attr("id", now_tag + "-tabs-above");
             now_div.attr("role", "tabpanel");
             now_div.attr("aria-labelledby", now_tag + "-tab-tabs-above");
 
-            for (let j = 0; j < data.response[now_tag]; ++j) {
-                let now_src = data.response[now_tag][i];
-                let now_img = $.createElement("img");
+            for (let j = 0; j < data.response[now_tag].length; ++j) {
+                let now_src = data.response[now_tag][j];
+                let now_img = $("<img src=\"\" alt=\"Norway\" style=\"\n" +
+                    "        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);\n" +
+                    "        transition: 0.3s;\n" +
+                    "        width: 200px;\n" +
+                    "        height: 200px;\n" +
+                    "        padding-top: 5px;\n" +
+                    "        padding-bottom: 5px;\n" +
+                    "        padding-right: 0px;\n" +
+                    "        padding-left: 5px;\n" +
+                    "        border-left-width: 0px;\n" +
+                    "        border-bottom-width: 0px;border-right-width: 0px;\n" +
+                    "    \" width=\"200\" height=\"200\">");
                 now_img.attr("src", now_src);
-                now_img.attr("alt", "Norway");
-                now_div.appendChild(now_img)
+                now_div.append(now_img)
             }
 
-            $("#myTabContent-tabs-above").appendChild(now_div)
+            $("#myTabContent-tabs-above").append(now_div)
         }
 
-        $('#table').show();
-        $('#clear').show();
+        $("#mytab").fadeIn(500);
+        $("html,body").animate({scrollTop: $("#mytab").offset().top}, 500);
+        $("#clear_div").css("display", "")
     }).on('filebrowse', function (event) {
         $('#search_input').fileinput("clear");
+        $("#mytab").hide();
+        $("#clear_div").css("display", "none")
     });
 });
 
-function myFunction() {
-    document.getElementById("predictedResult").innerHTML = "";
-    $('#clear').hide();
-}
+$("#clear_btn").click(function () {
+    return new Promise(function (resolve, reject) {
+        $.confirm({
+            title: 'Confirm!',
+            content: "Are you sure to clear ?",
+            type: 'red',
+            buttons: {
+                yes: {
+                    btnClass: 'btn-danger text-white',
+                    keys: ['enter'],
+                    action: function () {
+                        toastr.info("Clear ~ ");
+                        resolve();
+                        $('#search_input').fileinput("clear");
+                        $("#mytab").hide();
+                        $("#clear_div").css("display", "none")
+                    }
+                },
+                no: {
+                    btnClass: 'btn-default text-black',
+                    keys: ['enter'],
+                    action: function () {
+                        resolve();
+                    }
+                }
+            }
+        });
+    });
+
+});
 
 $("#change_to_search").click(function () {
-
+    $("#mytitle").animate({top: '3rem'}, 1000);
     $(this).fadeOut(200);
     setTimeout(function () {
         $(this).css("display", "none");
     }, 200);
     $("#search_bar").fadeIn(2500);
-
-})
-
-function search() {
-
-    $('#load').show();
-
-    $("form").submit(function (evt) {
-        //$('#loader-icon').show();
-
-        evt.preventDefault();
-
-        //$('#loader-icon').show();
-        var formData = new FormData($(this)[0]);
-
-        $.ajax({
-            url: 'imgUpload',
-            type: 'POST',
-            data: formData,
-            //async: false,
-            cache: false,
-            contentType: false,
-            enctype: 'multipart/form-data',
-            processData: false,
-
-            success: function (response) {
-                $('#load').hide();
-                $('#row1').show();
-                //$('#clear').show();
-                //console.log(response[1]);
-                //document.getElementById("predictedResult").innerHTML= response;
-                document.getElementById("img0").src = response.image0;
-                document.getElementById("img1").src = response.image1;
-                document.getElementById("img2").src = response.image2;
-                document.getElementById("img3").src = response.image3;
-                document.getElementById("img4").src = response.image4;
-                document.getElementById("img5").src = response.image5;
-                document.getElementById("img6").src = response.image6;
-                document.getElementById("img7").src = response.image7;
-                document.getElementById("img8").src = response.image8;
-                $('#table').show();
-                $('#clear').show();
-
-
-            }
-        });
-        return false;
-    })
-}
+});
