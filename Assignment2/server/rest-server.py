@@ -20,7 +20,7 @@ from scipy import ndimage
 
 # from scipy.misc import imsave
 
-UPLOAD_FOLDER = 'static/uploads'
+UPLOAD_FOLDER = 'uploads'
 ALLOWED_EXTENSIONS = set(['png', 'jpg', 'jpeg'])
 from tensorflow.python.platform import gfile
 

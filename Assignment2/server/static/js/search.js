@@ -190,8 +190,8 @@
             });
         }
 
-        $("#mytab").fadeIn(500);
-        $("html,body").animate({scrollTop: $("#mytab").offset().top}, 500);
+        $("#mytab").fadeIn(300);
+        $("html,body").animate({scrollTop: $("#mytab").offset().top}, 800);
         $("#clear_div").css("display", "")
     }).on('filebrowse', function (event) {
         $("#myTabContent-tabs-above").children(".otherscontent").remove();
